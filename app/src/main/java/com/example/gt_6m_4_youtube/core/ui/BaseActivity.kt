@@ -1,9 +1,8 @@
-package com.example.gt_6m_4_youtube.base
+package com.example.gt_6m_4_youtube.core.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
-import com.bumptech.glide.manager.ConnectivityMonitor
 import com.example.gt_6m_4_youtube.utils.ConnectionLiveData
 
 abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel> : AppCompatActivity() {
@@ -19,8 +18,8 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel> : AppCompatAct
         setContentView(binding.root)
         connectionLiveData = ConnectionLiveData(binding.root.context)
         isConnection()
-        initViews()
         initViewModel()
+        initViews()
         initListener()
     }
 

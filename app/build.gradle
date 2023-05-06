@@ -65,4 +65,5 @@ dependencies {
 // Interceptor
     implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2")
 
+    implementation 'io.github.nikartm:fit-button:2.0.0'
 }

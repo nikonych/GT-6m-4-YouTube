@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.gt_6m_4_youtube.R
 import com.example.gt_6m_4_youtube.databinding.ItemPlaylistBinding
-import com.example.gt_6m_4_youtube.model.Item
+import com.example.gt_6m_4_youtube.data.remote.model.Item
 
 class PlaylistAdapter(
     private val list: MutableList<Item>,
@@ -22,6 +22,12 @@ class PlaylistAdapter(
 
     override fun onBindViewHolder(holder: PlaylistViewHolder, position: Int) {
         holder.bind(list[position])
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun addItems(items: List<Item>) {
+        list.addAll(items)
+        notifyDataSetChanged()
     }
 
     inner class PlaylistViewHolder(
